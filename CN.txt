@@ -1,0 +1,230 @@
+import ipaddress
+
+def calculate_subnet_details(ip):
+    # Create an IPv4Network object
+    network = ipaddress.IPv4Network(ip, strict=False)
+
+    # Calculate subnet details
+    subnet_mask = network.netmask
+    first_address = network.network_address
+    last_address = network.broadcast_address
+    num_addresses = network.num_addresses
+
+    return subnet_mask, first_address, last_address, num_addresses
+
+
+# Test the function
+ip = "192.0.2.0/24"
+subnet_mask, first_address, last_address, num_addresses = calculate_subnet_details(ip)
+print(f"Subnet Mask: {subnet_mask}")
+print(f"First Address: {first_address}")
+print(f"Last Address: {last_address}")
+print(f"Number of Addresses: {num_addresses}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+destuffing stuffing:
+// C++ program for the above approach
+#include <bits/stdc++.h>
+using namespace std;
+
+// Function for bit de-stuffing
+void bitDestuffing(int N, int arr[])
+{
+	// Stores the de-stuffed array
+	int brr[30];
+
+	// Variables to traverse the arrays
+	int i, j, k;
+	i = 0;
+	j = 0;
+
+	// Stores the count of consecutive ones
+	int count = 1;
+
+	// Loop to traverse in the range [0, N)
+	while (i < N) {
+		// If the current bit is a set bit
+		if (arr[i] == 1) {
+			// Insert into array brr[]
+			brr[j] = arr[i];
+			// Loop to check for the next 5 bits
+			for (k = i + 1; arr[k] == 1 && k < N && count < 5; k++) {
+				j++;
+				brr[j] = arr[k];
+				count++;
+				// If 5 consecutive set bits are found skip the next bit in arr[]
+				if (count == 5) {
+					k++;
+				}
+				i = k;
+			}
+		}
+		// Otherwise insert arr[i] into the array brr
+		else {
+			brr[j] = arr[i];
+		}
+		i++;
+		j++;
+	}
+
+	// Print Answer
+	for (i = 0; i < j; i++)
+		cout<< brr[i];
+}
+
+// Driver Code
+int main()
+{
+	int N = 7;
+	int arr[] = { 1, 1, 1, 1, 1, 0, 1 };
+
+	bitDestuffing(N, arr);
+	return 0;
+}
+
+
+
+
+
+// C++ program for the above approach
+#include <bits/stdc++.h>
+#include <iostream>
+using namespace std;
+
+// Function for bit stuffing
+void bitStuffing(int N, int arr[])
+{
+
+	// Stores the stuffed array
+	int brr[30];
+
+	// Variables to traverse arrays
+	int i, j, k;
+	i = 0;
+	j = 0;
+
+	// Loop to traverse in the range [0, N)
+	while (i < N) {
+
+		// If the current bit is a set bit
+		if (arr[i] == 1) {
+			// Stores the count of consecutive ones
+			int count = 1;
+
+			// Insert into array brr[]
+			brr[j] = arr[i];
+
+			// Loop to check for
+			// next 5 bits
+			for (k = i + 1;
+				arr[k] == 1 && k < N && count < 5; k++) {
+				j++;
+				brr[j] = arr[k];
+				count++;
+
+				// If 5 consecutive set bits
+				// are found insert a 0 bit
+				if (count == 5) {
+					j++;
+					brr[j] = 0;
+				}
+				i = k;
+			}
+		}
+
+		// Otherwise insert arr[i] into
+		// the array brr[]
+		else {
+			brr[j] = arr[i];
+		}
+		i++;
+		j++;
+	}
+
+	// Print Answer
+	for (i = 0; i < j; i++)
+		cout << brr[i];
+}
+
+// Driver code
+int main()
+{
+	int N = 6;
+	int arr[] = { 1, 1, 1, 1, 1, 1 };
+
+	bitStuffing(N, arr);
+	return 0;
+}
+
+// This code is contributed by target_2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import java.io.*; import
+java.net.*; public class
+MyServer
+
+public static void main(String[] args){
+try
+{
+ServerSocket ss=new ServerSocket(6666);
+Socket s=ss.accept();//establishes connection
+DataInputStream dis=new DataInputStream(s.getInputStream());
+String str=(String)dis.readUTF();
+System.out.println(&quot;message= &quot;+str);
+ss.close();
+}
+catch(Exception e){System.out.println(e);}
+}
+}
+MyClient.java file
+import java.io.*;
+import java.net.*;
+public class MyClient
+{
+public static void main(String[] args)
+{
+try
+{
+Socket s=new Socket(&quot;localhost&quot;,6666);
+DataOutputStream dout=new DataOutputStream(s.getOutputStream());
+dout.writeUTF(&quot;Hello Server&quot;);
+dout.flush();
+dout.close();
+s.close();
+}catch(Exception e){System.out.println(e);}
+}
+}
+
