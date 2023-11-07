@@ -1,0 +1,94 @@
+1. ifconfig
+"ifconfig" stands for "interface configuration." It's a command-line tool used in computers and other
+devices to see and manage network interfaces. A network interface is like a doorway that allows your
+device to connect and communicate with other devices or the internet. Basically, "ifconfig" helps you see
+and control how your device connects to the world, making it useful for troubleshooting network issues
+or configuring your network settings.
+
+2. Ping
+"Ping" is a simple command used to check if your computer or device can communicate with another
+device (usually a server or another computer) over a network, like the internet.
+
+When you "ping" a device, your computer sends a tiny message, sort of like saying, "Hey, are you there?"
+to the other device. If the other device is working and connected, it will respond with a message like,
+"Yes, I'm here!" This response is usually very quick, and it shows that the connection is working fine.
+Basically, "ping" is like a quick check to see if another device is reachable and responsive on the network,
+helping you to identify potential connection problems.
+
+3. nslookup
+"nslookup" stands for "name server lookup." It's a command
+domain names and their associated IP addresses.
+When you type a website address like "www.example.com" into your web browser, your computer needs
+to know the IP address of that website to connect to it. This is because computers communicate with
+each other using IP addresses, which are a series of numbers like "192.0.2.1."
+"nslookup" allows you to ask a special server, called a DNS (Domain Name System) server, to loo
+IP address associated with a particular domain name. The DNS server will then provide the IP address
+back to your computer, enabling it to establish a connection with the website.
+Basically, It helps you translate human
+computerreadable IP addresses so that your computer can access the websites you want to visit.
+
+4. traceroute
+"Traceroute" is a command-line tool that helps you trace the path that data takes from your computer to
+another device (like a server) on the internet.
+When you run a traceroute command, your computer sends out tiny packets of data with a time
+(TTL) value that starts low and gradually increases. Each hop along the route decrements this TTL value.
+When a hop's TTL value reaches zero, that hop sends back a response to your computer saying, "I'm
+here!" This response allows your computer to know the IP
+By repeating this process with increasing TTL values, your computer can identify the series of devices
+(routers) that data traverses, from your local network to your internet service provider's network, and
+eventually to the target device's network.
+Basically, "traceroute" helps you see the path and the specific devices that data travels through to reach
+its destination on the internet, which can be useful for diagnosing network issues or understanding the
+route your data takes.
+
+5. netstat
+"Netstat" stands for "network statistics." It is a command line tool that helps you trace the path that data takes from your computer to
+the network connections on your computer.
+When your computer is connected to a network (like the internet), it is often communicating with
+devices. "Netstat" allows you to see details about these connections, such as:
+Active connections: It shows you all the connections your computer currently has with other devices,
+including the IP addresses or domain names of the devices it's connec
+Listening ports: Your computer can listen for incoming connections on specific ports. "Netstat" lets you
+see which ports are open and ready to accept connections from other devices.
+Protocol statistics: It provides statistics about how much data
+network protocols, like TCP (Transmission Control Protocol) or UDP (User Datagram Protocol).
+
+
+
+
+
+6. arp
+"ARP" stands for "Address Resolution Protocol." It's a fundamental process used by devices in a network
+to find the hardware (MAC) address associated with a specific IP address.
+In a network, devices communicate with each other using both IP addresses and MAC addresses. IP
+addresses are like phone numbers for devices on the network, while MAC addresses are unique
+identifiers for each network interface (like a physical address for the device).
+When a device wants to send data to another device on the same local network, it needs to know the
+MAC address of the destination device.
+Basically, ARP helps devices find each other's MAC addresses when they want to communicate on the
+same local network. It's like asking, "Who has this IP address?" and getting a response with the
+corresponding MAC address so that devices can talk to each other efficiently.
+
+7. ip
+In simple words, "IP" stands for "Internet Protocol," and it's a set of rules that govern how data is sent
+and received over the internet or any other computer network.
+Imagine you want to send a letter to a friend who lives far away. You'll need to put their address on the
+envelope so that the postal service knows where to deliver it. In a similar way, when computers send
+data to each other, they need a way to identify where the data should go, and that's where IP comes in.
+IP addresses are like unique digital addresses for devices connected to the internet or a network. Each
+device, whether it's a computer, smartphone, or any other internet-enabled gadget, has its own IP
+address. This address helps data find its way to the right destination.
+Basically, IP is like the addressing system of the internet and computer networks, making sure data
+reaches its intended target and enabling communication between devices worldwide.
+
+8. dig
+"Dig" is a command-line tool used to find information about domain names, such as websites. Imagine
+you want to know the address of a specific shop. You'd ask someone for directions or look it up on a map.
+Similarly, when you want to find information about a website, you can use "dig."
+When you run the "dig" command and provide the website's domain name (like www.example.com), it
+contacts a special server called a DNS (Domain Name System) server. This server is like a giant phone
+book for the internet, which stores the IP address associated with each domain name.
+
+Basically, "dig" helps you find the IP address associated with a domain name, just like asking someone for
+directions to a specific place. It's a useful tool for checking if a website's address is correct or
+troubleshooting internet-related issues.
